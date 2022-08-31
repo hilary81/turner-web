@@ -3,11 +3,17 @@
 import React, { useState } from "react";
 import Axios from "axios";
 
+function punctremoved(a){
+   const result=a
+    .replace(/[.,\\/#!$%^&\\*;:{}=\-_`~()]/g," ");
+  return result
+   
+}
+
 
 const BingSearch = () => {
     const [searchResults, setSearchResults] = useState(null);
     const [notFound, setNotFound] = useState(false);
-  
     const [inputQuery, setInputQuery] = useState('');
     const [address, setAddress] =useState('');
     const [webPageName, setWebPageName] = useState('');
@@ -22,7 +28,7 @@ const BingSearch = () => {
       const inputSpecCharsRemoved = userInput.replace(/[^a-z0-9]/gi, "").trim();
       setInputQuery(inputSpecCharsRemoved);
     };
-  
+
     // run when user searches, checks for response to have data, if it does will add data
     //   to searchResults state, otherwise turns notFound state to be true
     const handleSearch = async (e) => {
@@ -35,10 +41,7 @@ const BingSearch = () => {
         const data = response.data;
         if ("webPages" in data) {
                       
-            
-              setSearchResults(data.webPages.value);
-               
-             
+              setSearchResults(data.webPages.value);             
               setAddress(data.webPages.value[0].displayUrl);
               setSnippet(data.webPages.value[0].snippet);
               setWebPageName(data.webPages.value[0].name);
@@ -57,7 +60,6 @@ const BingSearch = () => {
     }
     return (
       <div >
-        
             <form
               action=""
               onSubmit={handleSearch}
@@ -85,4 +87,5 @@ const BingSearch = () => {
     );
   };
 
+module.exports = punctremoved;
 export default BingSearch
