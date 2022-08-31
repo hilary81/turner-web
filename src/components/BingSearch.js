@@ -13,14 +13,11 @@ const BingSearch = () => {
     const [address, setAddress] =useState('');
     const [webPageName, setWebPageName] = useState('');
     const [snippet, setSnippet] = useState('');
-  
-    
      
     // takes search box input, removes punctuation and assigns to inputQuery variable,
     //   ready to be searched
     const handleChange = (e) => {
       const userInput = e.target.value;
-      //const inputSpecCharsRemoved = userInput.replace(/[^a-z0-9]/gi, "").trim();
       const inputSpecCharsRemoved = PunctRemoved(userInput)
       setInputQuery(inputSpecCharsRemoved);
     };
@@ -76,9 +73,7 @@ const BingSearch = () => {
                 <p>{address}</p>
                 <p>{snippet}</p>
                 <h2>First changes in branch</h2>
-            </div>
-       
-         
+            </div> 
       </div>
     );
   };
