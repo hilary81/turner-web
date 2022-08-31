@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import Axios from "axios";
 
 function punctremoved(a){
-   const result=a
-    .replace(/[.,\\/#!$%^&\\*;:{}=\-_`~()]/g," ");
-  return result
-   
+  const result=a
+   .replace(/[.,\\/#!$%^&\\*;:{}=\-_`~()]/g," ");
+ return result
+  
 }
 
 
@@ -25,7 +25,8 @@ const BingSearch = () => {
     //   ready to be searched
     const handleChange = (e) => {
       const userInput = e.target.value;
-      const inputSpecCharsRemoved = userInput.replace(/[^a-z0-9]/gi, "").trim();
+      //const inputSpecCharsRemoved = userInput.replace(/[^a-z0-9]/gi, "").trim();
+      const inputSpecCharsRemoved = punctremoved(userInput)
       setInputQuery(inputSpecCharsRemoved);
     };
 
