@@ -1,0 +1,41 @@
+.nav-container {
+	display: flex;
+	justify-content: center;
+}
+
+.nav-links {
+	display: flex;
+	justify-content: space-between;
+}
+
+a {
+	padding: 1.5rem;
+	text-decoration: none;
+	color: #0076be;
+}
+
+.search-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #0076be;
+	height: 4rem;
+}
+
+.inner-search-container #search-bar-input {
+	padding-left: 1rem;
+	width: 20rem;
+	height: 2rem;
+}
+
+#submit-btn {
+	width: 8rem;
+	height: 2.3rem;
+	background-color: #0076be;
+	color: white;
+	border: 1px solid rgb(207, 207, 207);
+}
+
+.search-header {
+	color: #0076be;
+}
