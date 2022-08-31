@@ -2,13 +2,8 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useState } from "react";
 import Axios from "axios";
+import PunctRemoved from "./PunctRemoved";
 
-function punctremoved(a){
-  const result=a
-   .replace(/[.,\\/#!$%^&\\*;:{}=\-_`~()]/g," ");
- return result
-  
-}
 
 
 const BingSearch = () => {
@@ -26,7 +21,7 @@ const BingSearch = () => {
     const handleChange = (e) => {
       const userInput = e.target.value;
       //const inputSpecCharsRemoved = userInput.replace(/[^a-z0-9]/gi, "").trim();
-      const inputSpecCharsRemoved = punctremoved(userInput)
+      const inputSpecCharsRemoved = PunctRemoved(userInput)
       setInputQuery(inputSpecCharsRemoved);
     };
 
@@ -88,5 +83,4 @@ const BingSearch = () => {
     );
   };
 
-module.exports = punctremoved;
 export default BingSearch
