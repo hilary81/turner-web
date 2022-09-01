@@ -1,7 +1,7 @@
-const PunctRemoved = require('./PunctRemoved')
+import { Punctremoved } from "./BingSearch";
 
-describe("Punctuation check", () =>{
-    test("Hello*World should return Hello World", () =>{
-          expect(PunctRemoved("Hello,World")).toBe("Hello World")
-    });
-})
+describe("Punctuation check", () => {
+	test("Hello*World should return Hello World", () => {
+		expect(Punctremoved("Hello,World")).toBe("Hello World");
+	});
+});
