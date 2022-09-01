@@ -40,6 +40,8 @@ const BingSearch = () => {
 		
 			} else {
 				setNotFound(true);;
+			return 
+				
 			}
 	
 		} catch (error) {
