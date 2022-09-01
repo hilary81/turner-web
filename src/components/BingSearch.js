@@ -13,10 +13,7 @@ const BingSearch = () => {
 	const [searchResults, setSearchResults] = useState(null);
 	const [notFound, setNotFound] = useState(false);
 	const [inputQuery, setInputQuery] = useState("");
-	// const [address, setAddress] = useState("");
-	// const [address, setAddress] = useState("");
-	// const [webPageName, setWebPageName] = useState("");
-	// const [snippet, setSnippet] = useState("");
+
 
 	// takes search box input, removes punctuation and assigns to inputQuery variable,
 	//   ready to be searched
@@ -39,16 +36,11 @@ const BingSearch = () => {
 			const data = response.data;
 			if ("webPages" in data) {
 				setSearchResults(data.webPages.value);
-				// setAddress(data.webPages.value[0].displayUrl);
-				// setSnippet(data.webPages.value[0].snippet);
-				// setWebPageName(data.webPages.value[0].name);
+		
 			} else {
 				setNotFound(true);
 			}
-			// console.log(webPageName);
-			// console.log(searchResults);
-			// console.log(notFound);
-			// console.log(address);
+	
 		} catch (error) {
 			console.log(error);
 		}
