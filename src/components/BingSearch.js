@@ -39,7 +39,7 @@ const BingSearch = () => {
 				setSearchResults(data.webPages.value);
 		
 			} else {
-				setNotFound(true);
+				setNotFound(true);;
 			}
 	
 		} catch (error) {
