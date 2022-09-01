@@ -36,6 +36,7 @@ const BingSearch = () => {
 			const data = response.data;
 			if ("webPages" in data) {
 				setSearchResults(data.webPages.value);
+				setSearchResults(data.webPages.value);
 		
 			} else {
 				setNotFound(true);
