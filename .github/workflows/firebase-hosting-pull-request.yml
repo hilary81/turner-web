@@ -5,6 +5,7 @@ name: Deploy to Firebase Hosting on PR
 'on': pull_request
 jobs:
   sonarcloud:
+    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
@@ -18,7 +19,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   build_and_preview:
-    needs: sonarcloud
+    needs: sonarcloud    
     runs-on: ubuntu-latest
     
     steps:
