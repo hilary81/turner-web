@@ -19,7 +19,6 @@ const BingSearch = () => {
 	//   ready to be searched
 	const handleChange = (e) => {
 		const userInput = e.target.value;
-		//const inputSpecCharsRemoved = userInput.replace(/[^a-z0-9]/gi, "").trim();
 		const inputSpecCharsRemoved = Punctremoved(userInput);
 		setInputQuery(inputSpecCharsRemoved);
 	};
@@ -36,9 +35,11 @@ const BingSearch = () => {
 			const data = response.data;
 			if ("webPages" in data) {
 				setSearchResults(data.webPages.value);
+			
 		
 			} else {
 				setNotFound(true);
+			
 			}
 	
 		} catch (error) {
