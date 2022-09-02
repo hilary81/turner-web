@@ -80,6 +80,7 @@ const BingSearch = () => {
 					searchResults.map((result) => {
 						return <Results address={result.url} name={result.name} snippet={result.snippet}></Results>;
 					})}
+					<h1>one line added</h1>
 			</div>
 		</div>
 	);
